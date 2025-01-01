@@ -1,0 +1,38 @@
+@import 'bootstrap/scss/functions';
+
+$spacer: 4px;
+$spacers: (
+  0: 0,
+  1: $spacer,
+  2: $spacer * 2,
+  3: $spacer * 3,
+  4: $spacer * 4,
+  5: $spacer * 5,
+  6: $spacer * 6,
+  7: $spacer * 7,
+  8: $spacer * 8,
+  9: $spacer * 9,
+  10: $spacer * 10,
+  12: $spacer * 12,
+  14: $spacer * 14,
+  16: $spacer * 16,
+  17: $spacer * 17,
+  18: $spacer * 18,
+  19: $spacer * 19,
+  20: $spacer * 20,
+  45: $spacer * 4.5
+);
+
+$negative-spacers: negativify-map($spacers);
+
+$sizes: (
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%,
+  auto: auto
+);
+
+$input-height-large: 40px;
+$input-height-medium: 32px;
+$input-height-small: 24px;

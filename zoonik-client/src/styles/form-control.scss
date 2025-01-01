@@ -1,0 +1,103 @@
+@use 'sass:map';
+@import 'constants/colors';
+
+$control-padding-map: (
+  'big': 11px 16px,
+  'medium': 7px 12px,
+  'small': 3px 8px
+);
+
+$control-max-height-map: (
+  'big': 40px,
+  'medium': 32px,
+  'small': 24px
+);
+
+@mixin form-control-focused {
+  outline: 2px solid $platinum-day-600;
+  background-color: $platinum-day-50;
+}
+
+@mixin form-control-disabled {
+  cursor: default;
+  pointer-events: none;
+  background-color: $neutral-50;
+  border: 1px solid $neutral-400;
+  color: $neutral-600;
+}
+
+@mixin form-control-invalid {
+  border-color: $platinum-red-700;
+}
+
+.form-control {
+  display: inline-block;
+  font-family: inherit;
+  width: 100%;
+  padding: map.get($control-padding-map, 'medium');
+  color: $neutral-900;
+  border-radius: 4px;
+  border: 1px solid $neutral-200;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  position: relative;
+  text-overflow: ellipsis;
+
+  &__big {
+    padding: map.get($control-padding-map, 'big');
+    max-height: map.get($control-max-height-map, 'big');
+  }
+
+  &__medium {
+    padding: map.get($control-padding-map, 'medium');
+    max-height: map.get($control-max-height-map, 'medium');
+  }
+
+  &__small {
+    padding: map.get($control-padding-map, 'small');
+    max-height: map.get($control-max-height-map, 'small');
+  }
+
+  input,
+  textarea {
+    text-overflow: ellipsis;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+  }
+
+  &::placeholder {
+    color: $neutral-600;
+  }
+
+  &:not(:focus):not(:focus-within):not(:focus-visible):not(:active):not(:disabled) {
+    &:hover {
+      border-color: $neutral-600;
+
+      &.ng-touched.ng-invalid {
+        @include form-control-invalid;
+      }
+    }
+
+    &.ng-touched.ng-invalid {
+      @include form-control-invalid;
+    }
+  }
+
+  &:active,
+  &:focus,
+  &:focus-within,
+  &:focus-visible {
+    @include form-control-focused;
+  }
+
+  &.disabled,
+  &:disabled {
+    @include form-control-disabled;
+  }
+}

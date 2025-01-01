@@ -1,0 +1,18 @@
+@import 'constants/colors';
+
+.tab {
+  padding: 4px 14px;
+
+  background: transparent;
+  border-radius: 4px;
+
+  &.active,
+  &:hover {
+    color: $blue;
+    background: $ghost_blue-hovered;
+  }
+
+  &-icon {
+    gap: 8px;
+  }
+}

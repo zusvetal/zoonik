@@ -1,0 +1,45 @@
+<div class="d-flex w-100 h-75">
+  <div class="border-right p-6 w-75">
+    <div *ngFor="let video of list$ | async; let i = index" class="d-flex border-bottom">
+      <div class="px-3 py-2">{{i+1}}.</div>
+      <div class="px-3 py-2">{{video.name}}</div>
+      <div class="px-3 py-2 text-truncate">{{video.description}}</div>
+      <div class="px-3 py-2 text-truncate">{{video.originalName}}</div>
+      <div class="px-3 py-2 text-truncate">
+        <button class="btn btn-secondary" (click)="delete(video.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex flex-column justify-content-between p-6 w-100" [formGroup]="formGroup">
+    <div class="d-flex flex-column">
+      <div class="d-flex flex-column mb-4">
+        <label for="name" class="label">Video name</label>
+        <input id="name" class="form-control" [formControlName]="settingsControlsNames.name">
+      </div>
+
+      <div class="d-flex align-items-end mb-4">
+        <input id="is-active" type="checkbox" [formControlName]="settingsControlsNames.isActive">
+        <label  for="is-active" class="label ml-2">Is active</label>
+      </div>
+
+      <div class="d-flex flex-column mb-4">
+        <label for="desc" class="label">Description</label>
+        <textarea id="desc" class="form-control" rows="5" [formControlName]="settingsControlsNames.description"></textarea>
+      </div>
+
+      <div class="d-flex flex-column mb-4">
+        <label for="file" class="label">Video file</label>
+        <input id="file" type="file"  (change)="onFileSelected($event)" />
+      </div>
+
+
+    </div>
+
+    <div class="d-flex justify-content-end">
+      <div class="d-flex">
+        <button class="btn btn-secondary mr-2">Reset</button>
+        <button class="btn btn-primary" (click)="save()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

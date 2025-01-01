@@ -1,0 +1,87 @@
+@import 'constants/colors';
+@import 'constants/typography';
+
+.page-title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-xl;
+}
+
+.title {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-lg;
+}
+
+.header-title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-xl;
+}
+
+//TODO: Clarify sizing
+.text-xlg {
+  font-size: $font-size-xlg;
+  line-height: $line-height-lg;
+}
+
+.text-sm {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-sm;
+}
+
+.label {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  color: $gray-text-color;
+  line-height: $line-height-sm;
+}
+.text-grey {
+  color: $gray-text-color;
+}
+
+.label-color {
+  color: $label;
+}
+
+.black {
+  color: $black;
+}
+
+.text-blue {
+  color: $blue;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &--vertical {
+    hyphens: auto;
+    white-space: initial;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    overflow: hidden;
+
+    @for $i from 1 through 5 {
+      &--#{$i} {
+        -webkit-line-clamp: $i;
+      }
+    }
+  }
+
+  // disable safari tooltip
+  &::after {
+    content: '';
+    display: block;
+  }
+}
+
+.selection-red-300 {
+  &::selection {
+    background-color: $platinum-red-300;
+  }
+}

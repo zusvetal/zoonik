@@ -1,0 +1,16 @@
+@import 'constants/colors';
+
+$aside-width: 216px;
+$aside-collapsed-width: 60px;
+$aside-bg-color: #fff;
+$aside-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.08);
+$aside-border-color: $light-gray;
+$aside-border-radius: 4px;
+
+$aside-x-padding: 28px;
+$aside-y-padding: 24px;
+
+$aside-inner-x-padding: 8px;
+$aside-inner-y-padding: 8px;
+
+$main-content-offset: $aside-width + $aside-inner-x-padding + $aside-x-padding;

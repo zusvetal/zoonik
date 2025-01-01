@@ -1,0 +1,151 @@
+// TODO: align color variables with color palette after it will be added by designers team
+$platinum-day-50: #f0f6fe;
+$platinum-day-100: #ddebfc;
+$platinum-day-200: #c2dcfb;
+$platinum-day-300: #98c7f8;
+$platinum-day-500: #4488ed;
+$platinum-day-600: #2866e0;
+
+$neutral-40: #8b8b8b;
+$neutral-50: #f3f3f3;
+$neutral-100: #ebebeb;
+$neutral-200: #dcdcdc;
+$neutral-300: #c8c8c8;
+$neutral-400: #a8a8a8;
+$neutral-500: #8e8e8e;
+$neutral-600: #737373;
+$neutral-700: #595959;
+$neutral-800: #3e3e3e;
+$neutral-900: #141414;
+
+$platinum-red-100: #ffe1e1;
+$platinum-red-300: #fea3a3;
+$platinum-red-500: #f23838;
+$platinum-red-600: #e02222;
+$platinum-red-700: #bc1919;
+
+$platinum-orange-100: #feecd6;
+$platinum-orange-500: #f1701e;
+
+$platinum-yellow-500: #f5c20c;
+
+$base-black: #000000;
+$black: #141414;
+$black-pressed: #333333;
+$black-hovered: #3e3e3e;
+
+$white: #ffffff;
+$light-gray: #f3f3f3;
+$grey: #c8c8c8;
+$grey-hovered: #c8c8c8;
+$grey-pressed: #aeaeae;
+$grey-disabled: #f3f3f3;
+$grey-label: #939393;
+$label: #595959;
+$grey-label-hovered: #a8a8a8;
+$grey-label-active: #8e8e8e;
+$grey-label-lighter: #727272;
+$grey-placeholder: #737373;
+$grey-helper-text: #8b8b8b;
+$grey-background: #fafafa;
+
+$border-color: #d0d0ce;
+$border-color-hovered: #afafad;
+$link: #00a3e0;
+$link-selected: #009dd6;
+$link-hovered: #0096cc;
+$link-pressed: #008ec2;
+$blue: #2866e0;
+$blue-hovered: #2656cf;
+$blue-pressed: #2547a8;
+$blue-disabled: #98c7f8;
+$blue-light: #c2dcfb;
+$ghost_blue-hovered: #ddebfc;
+
+$green: #86bc25;
+$green-dark: #26890d;
+$green-dark-hover: #20730b;
+$green-dark-secondary-hover: #1a5d09;
+$green-dark-active: #1d680a;
+$green-dark-secondary-active: #144707;
+$green-dark-disabled: #8ec281;
+$green-light: #f4f9f3;
+$green-200: #beddbb;
+$green-600: #17840b;
+
+//text
+$text-color-base: $black;
+$gray-text-color: #53565a;
+$note-text-color: #63666a;
+$gray-text-color-hovered: #d6d6d6;
+$gray-tag-hovered: #40444a;
+$disabled-text-color: #bbbcbc;
+$gray-placeholder: #97999b;
+$neutral: #3b3b3b;
+
+$box-shadow: rgb(0 0 0 / 12%);
+
+$red-hovered: #bc1919;
+$red-pressed: #9c1818;
+$red: #e02222;
+$red-disabled: #fea3a3;
+$red-100: #ffe1e1;
+$red-200: #ffc9c9;
+
+$yellow: #ffcd00;
+$yellow-100: #f7e08d;
+
+$focused-border: #005587;
+$highlight: #a0dcff;
+
+//option
+$option-hovered-color: rgba(0, 0, 0, 0.08);
+$option-selected-color: rgba(0, 0, 0, 0.12);
+
+//toggle
+$toggle-checked-hovered-color: linear-gradient(0deg, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.32)), #26890d;
+$toggle-hovered-color: linear-gradient(0deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0.32)), #000;
+
+$colors: (
+  white: $white,
+  gray-dark: $gray-text-color,
+  gray: $note-text-color,
+  gray-light: $light-gray,
+  black: $black,
+  blue: $blue,
+  blue-light: $blue-light,
+  red: $red,
+  red-100: $red-100,
+  gray-text-color: $gray-text-color,
+  border: $border-color,
+  label: $label,
+  gray-label-active: $grey-label-active,
+  base-black: $base-black,
+  neutral: $neutral,
+  platinum-day-50: $platinum-day-50,
+  platinum-day-100: $platinum-day-100,
+  platinum-day-200: $platinum-day-200,
+  platinum-day-300: $platinum-day-300,
+  platinum-day-500: $platinum-day-500,
+  platinum-day-600: $platinum-day-600,
+  neutral-40: $neutral-40,
+  neutral-50: $neutral-50,
+  neutral-100: $neutral-100,
+  neutral-200: $neutral-200,
+  neutral-300: $neutral-300,
+  neutral-400: $neutral-400,
+  neutral-500: $neutral-500,
+  neutral-600: $neutral-600,
+  neutral-700: $neutral-700,
+  neutral-800: $neutral-800,
+  neutral-900: $neutral-900,
+  platinum-red-100: $platinum-red-100,
+  platinum-red-300: $platinum-red-300,
+  platinum-red-500: $platinum-red-500,
+  platinum-red-600: $platinum-red-600,
+  platinum-red-700: $platinum-red-700,
+  platinum-orange-100: $platinum-orange-100,
+  platinum-orange-500: $platinum-orange-500,
+  green-600: $green-600,
+  platinum-yellow-500: $platinum-yellow-500
+);

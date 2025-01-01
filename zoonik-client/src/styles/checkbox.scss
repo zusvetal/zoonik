@@ -1,0 +1,165 @@
+@import 'constants/colors';
+
+$switcher-width: 24px;
+$switcher-height: 16px;
+$checkbox-width: 16px;
+$checkbox-height: 16px;
+
+input[type='checkbox'] {
+  &.switcher {
+    cursor: pointer;
+    /* Reset default checkbox type styles */
+    position: relative;
+    z-index: unset;
+    opacity: initial;
+
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* Not removed via appearance */
+    margin: 0;
+
+    display: grid;
+    place-content: center;
+    width: $switcher-width;
+    height: $switcher-height;
+
+    font: inherit;
+    color: currentColor;
+
+    &::before {
+      content: '';
+      position: absolute;
+
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: $switcher-height;
+      height: $switcher-height;
+
+      background-color: $white;
+      border: 1px solid $neutral-700;
+      border-radius: 50%;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+
+      top: 50%;
+      left: 1px;
+      transform: translateY(-50%);
+      width: calc($switcher-width - 2px); // - 1 px from each side
+      height: 4px;
+
+      background-color: $neutral-700;
+    }
+
+    &:checked::before {
+      transform: translateX(calc(100% - ($switcher-height / 2)));
+      border-width: 6px;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+  &.checkbox {
+    /* Reset default checkbox type styles */
+    position: relative;
+    z-index: unset;
+    opacity: initial;
+
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* Not removed via appearance */
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $checkbox-width;
+    height: $checkbox-height;
+
+    font-family: 'PF_icons', sans-serif;
+    color: currentColor;
+
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 2px;
+
+    &::before {
+      content: '';
+      position: absolute;
+
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 1px solid $neutral-700;
+      border-radius: 2px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:checked::before {
+      border-color: $platinum-day-600;
+      background-color: $platinum-day-600;
+    }
+
+    &:checked::after {
+      content: '\e90e';
+      font-size: 12px;
+      font-weight: bold;
+      color: $white;
+    }
+
+    &.intermediate {
+      &:before {
+        border-color: $platinum-day-600;
+        background-color: $platinum-day-600;
+      }
+
+      &::after {
+        content: '';
+        height: 2px;
+        width: 8px;
+        background-color: $white;
+        top: 50%;
+      }
+    }
+
+    &:disabled {
+      color: $black-pressed;
+      cursor: not-allowed;
+
+      &::before {
+        border: 1px solid $black-pressed;
+      }
+
+      &:checked::before {
+        border-color: $black-pressed;
+        background-color: $black-pressed;
+      }
+    }
+  }
+
+  & + div {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+  }
+}

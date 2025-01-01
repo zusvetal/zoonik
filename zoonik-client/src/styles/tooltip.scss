@@ -1,0 +1,274 @@
+@mixin tooltip-top-triangle {
+  &:after {
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-color: #000 transparent transparent transparent;
+  }
+
+  &.white-tooltip {
+    &::after {
+      border-color: #d0d0ce transparent transparent transparent;
+      z-index: 9;
+    }
+
+    &:before {
+      top: calc(100% - 1px);
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-color: #fff transparent transparent transparent;
+      z-index: 10;
+    }
+  }
+}
+
+@mixin tooltip-bottom-triangle {
+  &:after {
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-color: transparent transparent #000 transparent;
+  }
+
+  &.white-tooltip {
+    &::after {
+      border-color: transparent transparent #d0d0ce transparent;
+      z-index: 9;
+    }
+
+    &:before {
+      bottom: calc(100% - 1px);
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-color: transparent transparent #fff transparent;
+      z-index: 10;
+    }
+  }
+}
+
+@mixin tooltip-left-triangle {
+  &:after {
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-color: transparent transparent transparent #000;
+  }
+
+  &.white-tooltip {
+    &::after {
+      border-color: transparent transparent transparent #d0d0ce;
+      z-index: 9;
+    }
+
+    &:before {
+      top: 50%;
+      left: calc(100% - 1px);
+      margin-top: -5px;
+      border-width: 5px;
+      border-color: transparent transparent transparent #fff;
+      z-index: 10;
+    }
+  }
+}
+
+@mixin tooltip-right-triangle {
+  &:after {
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-color: transparent #000 transparent transparent;
+  }
+
+  &.white-tooltip {
+    &::after {
+      border-color: transparent #d0d0ce transparent transparent;
+      z-index: 9;
+    }
+
+    &:before {
+      top: 50%;
+      right: calc(100% - 1px);
+      margin-top: -5px;
+      border-width: 5px;
+      border-color: transparent #fff transparent transparent;
+      z-index: 10;
+    }
+  }
+}
+
+@mixin tooltip-base {
+  padding: 8px 12px;
+  width: max-content;
+  max-width: 340px;
+  max-height: 600px;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 16px;
+  color: #fff;
+  background: #000;
+  z-index: 10010;
+  opacity: 0;
+  text-overflow: ellipsis;
+  word-break: break-word;
+
+  &__sm {
+    padding: 4px 8px;
+  }
+
+  &:after {
+    content: '';
+  }
+
+  &:after,
+  &:before {
+    position: absolute;
+    border-style: solid;
+  }
+
+  &.single-line {
+    word-break: normal;
+  }
+
+  &-show {
+    opacity: 1;
+  }
+
+  &-top {
+    @include tooltip-top-triangle;
+  }
+
+  &-bottom {
+    @include tooltip-bottom-triangle;
+  }
+
+  &-left {
+    @include tooltip-left-triangle;
+  }
+
+  &-right {
+    @include tooltip-right-triangle;
+  }
+
+  &.triangle-offset-top {
+    &:after,
+    &:before {
+      top: var(--triangle-offset-top);
+    }
+  }
+
+  &.triangle-offset-left {
+    &:after,
+    &:before {
+      left: var(--triangle-offset-top);
+    }
+  }
+
+  &.max-height-reached {
+    span {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      -webkit-line-clamp: inherit;
+    }
+  }
+
+  &.white-tooltip {
+    color: #000;
+    background: #fff;
+    border: 1px solid #d0d0ce;
+
+    &:before {
+      content: '';
+    }
+  }
+}
+
+.info-tooltip {
+  position: absolute;
+  white-space: pre-line;
+  @include tooltip-base;
+
+  &:not(:last-child) {
+    display: none;
+  }
+}
+
+.template-tooltip {
+  @include tooltip-base;
+  opacity: 1;
+}
+
+.top,
+.top-left,
+.top-center,
+.top-right {
+  .template-tooltip {
+    @include tooltip-top-triangle;
+
+    &.triangle-offset {
+      &:after,
+      &:before {
+        left: var(--triangle-offset);
+      }
+    }
+  }
+}
+
+.bottom,
+.bottom-left,
+.bottom-center,
+.bottom-right {
+  .template-tooltip {
+    @include tooltip-bottom-triangle;
+
+    &.triangle-offset {
+      &:after,
+      &:before {
+        left: var(--triangle-offset);
+      }
+    }
+  }
+}
+
+.left,
+.left-top,
+.left-center,
+.left-bottom {
+  .template-tooltip {
+    @include tooltip-left-triangle;
+
+    &.triangle-offset {
+      &:after,
+      &:before {
+        top: var(--triangle-offset);
+      }
+    }
+  }
+}
+
+.right,
+.right-top,
+.right-center,
+.right-bottom {
+  .template-tooltip {
+    @include tooltip-right-triangle;
+
+    &.triangle-offset {
+      &:after,
+      &:before {
+        top: var(--triangle-offset);
+      }
+    }
+  }
+}
+.white-tooltip {
+  color: black;
+  background: white;
+  border: 1px solid #d0d0ce;
+}

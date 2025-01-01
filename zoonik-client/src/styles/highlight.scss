@@ -1,0 +1,25 @@
+@import 'constants/colors';
+
+.highlight {
+  background-color: $platinum-day-100 !important;
+}
+
+.highlight-overflowed {
+  background-color: $platinum-red-500 !important;
+}
+
+.highlighted {
+  position: relative;
+
+  &.has-hidden-highlight {
+    &::after {
+      content: '';
+      position: absolute;
+      width: 11px;
+      height: 100%;
+      background-color: $platinum-day-100;
+      right: 2px;
+      z-index: -1;
+    }
+  }
+}
