@@ -1,0 +1,5 @@
+database.db
+node_modules
+
+/src/media-files/*
+!/src/media-files/.gitkeep
